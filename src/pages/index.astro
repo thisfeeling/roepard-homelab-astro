@@ -1,16 +1,39 @@
 ---
+import { GoogleAnalytics } from 'astro-google-analytics';
+import '../styles/app.css';
 
+import Wrapper from '../components/Wrapper.astro';
+
+import { WifiOff } from 'lucide-astro'
+
+import Layout from '../layouts/Layout.astro';
+
+import { Tooltips } from 'astro-tooltips';
+
+import Code from "@astropub/code"
 ---
 
 <html lang="en">
 	<head>
+		<GoogleAnalytics id="G-XXXXXXXXXX" />
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Roepard Homelab</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<Wrapper title="My First Post">
+			<p>This is my first post using Astro!</p>
+			<WifiOff />
+		</Wrapper>
+
+		<Layout/ >
+
+		</Layout>
+
+		<Code lang="js" code="const str = 'string'"></Code>
+		<br>
+		<Code lang="html" code="<h1>Hello, Astro!</h1>"></Code>
 	</body>
 </html>
