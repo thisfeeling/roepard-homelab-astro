@@ -6,6 +6,7 @@ import { ModeToggle } from '@/components/ModeToggle';
 import { Button } from '@/components/ui/button';
 
 import { AccordionDemo } from '@/modules/Things'; 
+import { SidebarLayout } from '@/components/SidebarLayout';
 ---
 
 <script is:inline>
@@ -36,10 +37,14 @@ import { AccordionDemo } from '@/modules/Things';
 		<title>Roepard Homelab</title>
 	</head>
 	<body>
-		<ModeToggle client:load />
-		<div class="grid place-items-center h-screen content-center">
-			<Button client:load>Button</Button>
-			<AccordionDemo client:load />
-		</div>
+		<SidebarLayout client:load>
+			<div class="flex justify-end">
+				<ModeToggle client:load />
+			</div>
+			<div class="grid place-items-center h-[calc(100vh-8rem)] content-center">
+				<Button client:load>Button</Button>
+				<AccordionDemo client:load />
+			</div>
+		</SidebarLayout>
 	</body>
 </html>
